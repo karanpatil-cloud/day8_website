@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karan Patil - WebDev Journey</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://fav.farm/🚀" type="image/png" />
+
+  <!-- TailwindCSS + DaisyUI -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'fade-in-down': 'fadeInDown 1s ease-out',
+            float: 'float 6s ease-in-out infinite',
+            'spin-slow': 'spin 10s linear infinite'
+          },
+          keyframes: {
+            fadeInDown: {
+              '0%': { opacity: 0, transform: 'translateY(-20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' }
+            }
+          },
+          backgroundImage: {
+            'vibrant-pattern': "linear-gradient(135deg, #ffdde1 0%, #ee9ca7 25%, #cbaacb 50%, #e0c3fc 75%, #8ec5fc 100%)",
+            'sparkle': "url('https://www.transparenttextures.com/patterns/stardust.png')"
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" />
+
+  <!-- Meta Tags -->
+  <meta name="description" content="Karan Patil's journey in web development." />
+  <meta property="og:title" content="Karan Patil - WebDev Journey" />
+  <meta property="og:image" content="https://i.imgur.com/QXz9jSM.png" />
+  <meta property="og:url" content="https://yourwebsite.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    .floating-icons {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .floating-icons img {
+      position: absolute;
+      width: 80px;
+      opacity: 0.3;
+      animation: float 10s infinite ease-in-out;
+    }
+    .floating-icons img:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+    .floating-icons img:nth-child(2) { top: 30%; left: 80%; animation-delay: 2s; }
+    .floating-icons img:nth-child(3) { top: 50%; left: 40%; animation-delay: 4s; }
+    .floating-icons img:nth-child(4) { top: 70%; left: 20%; animation-delay: 6s; }
+    .floating-icons img:nth-child(5) { top: 85%; left: 60%; animation-delay: 1s; }
+  </style>
+</head>
+
+<body class="bg-vibrant-pattern bg-sparkle bg-blend-soft-light bg-fixed bg-cover min-h-screen p-6 font-sans relative text-white">
+
+  <!-- Floating icons -->
+  <div class="floating-icons">
+    <img src="https://th.bing.com/th/id/OIP.Su9WgZe9_GtLpFNCu5lyHgHaG2?rs=1&pid=ImgDetMain" alt="star" />
+    <img src="https://th.bing.com/th/id/OIP.T3F5f2r6e5VXjx0mNqhU_AHaHT?rs=1&pid=ImgDetMain" alt="heart" />
+    <img src="https://th.bing.com/th/id/OIP.Su9WgZe9_GtLpFNCu5lyHgHaG2?rs=1&pid=ImgDetMain" alt="star" />
+    <img src="https://th.bing.com/th/id/OIP.T3F5f2r6e5VXjx0mNqhU_AHaHT?rs=1&pid=ImgDetMain" alt="heart" />
+    <img src="https://th.bing.com/th/id/OIP.Su9WgZe9_GtLpFNCu5lyHgHaG2?rs=1&pid=ImgDetMain" alt="star" />
+  </div>
+
+  <!-- Auth Section -->
+  <div id="auth-section" class="max-w-xl mx-auto z-10 relative">
+    <div class="flex justify-center gap-4 mb-4">
+      <button id="show-login" class="btn btn-outline btn-primary">Login</button>
+      <button id="show-signup" class="btn btn-outline btn-secondary">Sign Up</button>
+    </div>
+
+    <div id="login-form" class="bg-white/80 text-black rounded-2xl shadow-xl p-8 backdrop-blur-md">
+      <h2 class="text-2xl font-bold mb-4">Login</h2>
+      <form id="loginForm">
+        <div class="form-control">
+          <label class="label">Email</label>
+          <input type="email" placeholder="Email" class="input input-bordered w-full" required />
+        </div>
+        <div class="form-control mt-4">
+          <label class="label">Password</label>
+          <input type="password" placeholder="Password" class="input input-bordered w-full" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-full mt-6">Login</button>
+      </form>
+    </div>
+
+    <div id="signup-form" class="bg-white/80 text-black rounded-2xl shadow-xl p-8 backdrop-blur-md hidden">
+      <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
+      <form id="signupForm">
+        <div class="form-control">
+          <label class="label">Name</label>
+          <input type="text" placeholder="Full name" class="input input-bordered w-full" required />
+        </div>
+        <div class="form-control mt-4">
+          <label class="label">Email</label>
+          <input type="email" placeholder="Email" class="input input-bordered w-full" required />
+        </div>
+        <div class="form-control mt-4">
+          <label class="label">Password</label>
+          <input type="password" placeholder="Password" class="input input-bordered w-full" required />
+        </div>
+        <button type="submit" class="btn btn-success w-full mt-6">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="hidden max-w-2xl mx-auto bg-white/80 text-black rounded-3xl shadow-2xl backdrop-blur-lg p-10 animate-fade-in-down border border-purple-300 relative z-10">
+    <!-- Profile -->
+    <div class="text-center">
+      <img src="photo.jpg" alt="Karan Patil" class="rounded-full w-36 h-36 mx-auto border-4 border-primary shadow-xl hover:scale-110 transition duration-500 ease-in-out" />
+      <h1 class="text-5xl font-extrabold bg-gradient-to-r from-pink-600 via-purple-500 to-indigo-400 bg-clip-text text-transparent mt-4">Karan Patil</h1>
+      <p class="text-neutral mt-2 text-lg">📧 karan@example.com | 📞 +91-9022366521</p>
+    </div>
+
+    <!-- Day Buttons -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-10 text-lg">
+      <a href="https://glistening-paletas-e3377a.netlify.app" class="btn btn-primary shadow-md hover:scale-105 transition">Day 1</a>
+      <a href="https://karanpatil-byte.github.io/Day2_Books/" class="btn btn-secondary shadow-md hover:scale-105 transition">Day 2</a>
+      <a href="https://karanpatil-byte.github.io/Day3/" class="btn btn-accent shadow-md hover:scale-105 transition">Day 3</a>
+      <a href="https://karanpatil-cloud.github.io/Day4/" class="btn btn-success shadow-md hover:scale-105 transition">Day 4</a>
+      <a href="https://karanpatil-cloud.github.io/aws/" class="btn btn-info shadow-md hover:scale-105 transition">Day 5</a>
+      <a href="login.html" class="btn btn-error shadow-md hover:scale-105 transition">Login</a>
+    </div>
+
+    <!-- Socials -->
+    <div class="mt-10 text-center">
+      <p class="text-sm text-gray-700 mb-2 font-semibold">Share this page:</p>
+      <div class="flex justify-center flex-wrap gap-3">
+        <a href="https://www.facebook.com/karan.patil.official" target="_blank" class="btn btn-sm btn-info hover:brightness-110">Facebook</a>
+        <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Follow%20Karan%20Patil's%20Web%20Dev%20Journey!" target="_blank" class="btn btn-sm btn-accent hover:brightness-110">Twitter</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://yourwebsite.com" target="_blank" class="btn btn-sm btn-primary hover:brightness-110">LinkedIn</a>
+        <a href="https://github.com/karanpatil" target="_blank" class="btn btn-sm btn-neutral hover:brightness-110">GitHub</a>
+        <a href="https://www.instagram.com/karanpatil.official" target="_blank" class="btn btn-sm btn-error hover:brightness-110">Instagram</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-10 text-sm text-gray-500 text-center">
+      © 2025 <span class="font-bold text-purple-500">Karan Patil</span> | All rights reserved.
+    </footer>
+  </div>
+
+  <!-- Auth Script -->
+  <script>
+    const loginForm = document.getElementById("login-form");
+    const signupForm = document.getElementById("signup-form");
+    const authSection = document.getElementById("auth-section");
+    const mainContent = document.getElementById("main-content");
+
+    document.getElementById("show-login").addEventListener("click", () => {
+      loginForm.classList.remove("hidden");
+      signupForm.classList.add("hidden");
+    });
+
+    document.getElementById("show-signup").addEventListener("click", () => {
+      signupForm.classList.remove("hidden");
+      loginForm.classList.add("hidden");
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      authSection.style.display = "none";
+      mainContent.classList.remove("hidden");
+    });
+
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      authSection.style.display = "none";
+      mainContent.classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
